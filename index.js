@@ -4,11 +4,12 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
+let num = 1;
 const questions = [
     {
         type: "input",
         name: "username",
-        message: "7) What is your GitHub username?",
+        message: num++ + ") What is your GitHub username?",
         validate: usernameInput => {
             if(usernameInput) {
                 return true;
@@ -22,7 +23,7 @@ const questions = [
     {
         type: "input",
         name: "email",
-        message: "7) What is your email address?",
+        message: num++ + ") What is your email address?",
         validate: emailInput => {
             if(emailInput) {
                 return true;
@@ -36,7 +37,7 @@ const questions = [
     {
         type: "input",
         name: "project",
-        message: "1) What is your project title?",
+        message: num++ + ") What is your project title?",
         validate: titleInput => {
             if(titleInput) {
                 return true;
@@ -50,7 +51,7 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "2) Describe your project.",
+        message: num++ + ") Describe your project.",
         validate: descriptionInput => {
             if(descriptionInput) {
                 return true;
@@ -64,13 +65,13 @@ const questions = [
     {
         type: "list",
         name: "license",
-        message: "6) What type of license did you use?",
+        message: num++ + ") What type of license did you use?",
         choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
     },
     {
         type: "input",
         name: "install",
-        message: "3) What command should be run to install dependencies?",
+        message: num++ + ") What command should be run to install dependencies?",
         validate: instalInput => {
             if(instalInput) {
                 return true;
@@ -84,7 +85,7 @@ const questions = [
     {
         type: "input",
         name: "steps",
-        message: "4) What are the steps to use your project?",
+        message: num++ + ") What are the steps to use your project?",
         validate: stepsInput => {
             if(stepsInput) {
                 return true;
@@ -98,7 +99,7 @@ const questions = [
     {
         type: "input",
         name: "tests",
-        message: "5) Give the command you use to run tests.",
+        message: num++ + ") Give the command you use to run tests.",
         validate: testsInput => {
             if(testsInput) {
                 return true;
@@ -112,7 +113,7 @@ const questions = [
     {
         type: "input",
         name: "contribute",
-        message: "5) How do you contribute to this repo?",
+        message: num++ + ") How do you contribute to this repo?",
         validate: contributeInput => {
             if(contributeInput) {
                 return true;
@@ -125,15 +126,25 @@ const questions = [
     }
 ];
 
-// Writes the file to ./dist/README.md
-function writeToFile(fileName, data) {
-}
-
 // Prompts user for data regarding the package
 const promptUser = () => {
     return inquirer.prompt(questions);
 }
 
+// Writes the file to ./dist/README.md
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if(err) {
+            console.log(err);
+            return;
+        }
+        console.log("Check the dist folder to see the completed README!");
+    })
+}
+
 // function call to initialize program
 promptUser()
-    .then(readmeData => console.log(readmeData));
+    .then(readmeData => {
+        const code = generateMarkdown(readmeData);
+        writeToFile("./dist/README.md", code);
+    });
