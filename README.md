@@ -4,7 +4,7 @@
 
 ## Description
 
-Builds a professional README file based on user input from the command line.
+Builds a professional README file based on user input from the command line.  The package utilizes "NPM INquirer" and "FS" to accept user input and write the appropriate file.
 
 ## Table of Contents
 
@@ -22,11 +22,11 @@ Builds a professional README file based on user input from the command line.
 
 ## Installation
 
-To install necessary dependencies, run the following command: `npm i`
+To install use the README generator, download it from the GitHub page below, run `npm init` and `npm install inquirer` to set-up the project.
 
 ## Usage
 
-After installing the program, run `node index` and provide the necessary input.  The code will build a README.md file in the `dist` folder that can be copied into your won project.
+After installing the program, run `node index` and provide the necessary input.  The code will build a README.md file in the `dist` folder that can be copied into your won project.  To view this project in action, see the [demo video](https://www.youtube.com).
 
 ## License
 
@@ -34,11 +34,15 @@ This project is licensed under the MIT license.
 
 ## Contribute
 
-Please use the provided contact information to gain access to contribute to the repo.
+Please use the provided contact information to gain access to contribute to the repo.  Updates to this project are shown below:
+
+* Provide test case data to allow the user to see a sample README.
+* Add error check and handling to verify a user's input makes sense (e.g. valid email, valid GitHub username/project pair, etc.).
+* Add option to provide a screenshot or demonstration link in the "Description" section.
 
 ## Tests
 
-To run tests, run the following command: `npm run test`
+This feature is not currently available.
 
 ## Questions
 
