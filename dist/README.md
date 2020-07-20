@@ -1,11 +1,11 @@
 
-# My name is Bob
+# Taskinator
 
-![GitHub license](https://img.shields.io/badge/license-BSD-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
 
-It describes Bob
+This project allows manipulation of tasks to help manage work flow.
 
 ## Table of Contents
 
@@ -23,24 +23,24 @@ It describes Bob
 
 ## Installation
 
-To install necessary dependencies, run the following command: `node bob`
+To install necessary dependencies, run the following command: `npm init`
 
 ## Usage
 
-run the program using `node bob`
+Open the site from my GitHub page shown below and use freely!
 
 ## License
 
-This project is licensed under the BSD 3 license.
+This project is licensed under the MIT license.
 
 ## Contribute
 
-email bob
+Please email me at the address shown below.
 
 ## Tests
 
-To run tests, run the following command: `npm test bob`
+To run tests, run the following command: `npm run test`
 
 ## Questions
 
-If you have questions, visit my [GitHub](https://github.com/bob/My name is Bob) or contact me directly at <bob@bob.com>.
+If you have questions, visit my [GitHub](https://github.com/nmcanall/Taskinator) or contact me directly at <nmcanall@citadel.edu>.
