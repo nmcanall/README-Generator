@@ -26,7 +26,7 @@ To install use the README generator, download it from the GitHub page below, run
 
 ## Usage
 
-After installing the program, run `node index` and provide the necessary input.  The code will build a README.md file in the `dist` folder that can be copied into your won project.  To view this project in action, see the [demo video](https://www.youtube.com).
+After installing the program, run `node index` and provide the necessary input.  The code will build a README.md file in the `dist` folder that can be copied into your won project.  To view this project in action, see the [demo video](https://www.youtube.com/watch?v=ntLDnW_xiQo&feature=youtu.be).
 
 ## License
 
